@@ -1,0 +1,25 @@
+SELECT * FROM epbt.`epbt_mukim`;
+
+SELECT * FROM epbt.`epbt_bandar` b WHERE mukim = 4;
+
+SELECT * FROM epbt.`epbt_taman` t WHERE bandar = 'UK02';
+
+SELECT * FROM epbt.epbt_jalan j WHERE taman = 'B03007'; 
+
+SELECT * FROM epbt.;
+
+SELECT * FROM epbt.`etax_cukai` c WHERE noakaun = '615040956000';
+
+SELECT * FROM epbt.`etax_akaun` a WHERE noakaun = '311030694000';
+
+SELECT *FROM epbt.`epbt_jalan` WHERE kod = '0036-SK2002A';
+
+/*insert into epbt.`epbt_jalan` j (kod, kodjalan, nama)
+values ('', '', '');*/
+
+SELECT *
+FROM epbt.`epbt_mukim` m
+INNER JOIN epbt.epbt_bandar b ON m.`kod` = b.`mukim`
+INNER JOIN epbt.`epbt_taman` t ON b.`kod` = t.`bandar`
+INNER JOIN epbt.epbt_jalan j ON t.`kod` = j.`taman`
+WHERE j.`nama` LIKE '%AZIZ%';
